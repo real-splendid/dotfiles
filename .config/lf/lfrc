@@ -1,0 +1,32 @@
+# Basic Settings
+# set preview true
+set shell bash
+set shellopts '-eu'
+set info size:time
+set hidden true
+
+# cmd open ${{
+#     case $(file --mime-type "$f" -bL) in
+#         text/*|application/json) $EDITOR "$f";;
+#         *) xdg-open "$f" ;;
+#     esac
+# }}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+# Keys
+# map e $$EDITOR "$f"
+map <enter> open
+map <insert> mkfile
+map <delete> delete
+map gm push '

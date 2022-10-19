@@ -1,0 +1,7 @@
+require('config')
+require('keybindings')
+require('packages')
+require('package-iron-repl')
+require('package-completion')
+-- require('null-ls')
+-- require('packages_keybindings')
