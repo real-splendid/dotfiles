@@ -20,6 +20,7 @@ WORKDIR /home/${NEWUSER}
 
 # --- Configs ---
 COPY --chown=${NEWUSER}:${NEWGROUP} ./ dotfiles
-RUN cd dotfiles && sudo make
+RUN cd dotfiles && sudo make install
+RUN cd dotfiles && make install-configs nvim-packer-sync composer-install-global-packages
 
 ENTRYPOINT [ "bash" ]

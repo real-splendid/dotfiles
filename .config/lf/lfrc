@@ -1,5 +1,6 @@
 # Basic Settings
-# set preview true
+set preview true
+set previewer ~/.config/lf/previewer
 set shell bash
 set shellopts '-eu'
 set info size:time

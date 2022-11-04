@@ -5,13 +5,16 @@
 * encrypt newsboat urls
 * nvim 
     * snippets
-    * php fixer
     * code actions
     * better spellcheck (camel, upper snake etc)
+    * toggleterm settings
     * telescope settings
-    * ad-hoc terminal integration
+    * ~ ad-hoc terminal integration
     <!-- * comments -->
     <!-- * php formatter -->
     <!-- * find-replace -->
 * php
     * php-cs-fixer
+    * rector
+    * phpmd
+    * phpcpd

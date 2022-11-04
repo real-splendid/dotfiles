@@ -1,6 +1,7 @@
 alias l='ls -alh'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias apkadd='sudo apk add '
 
 dictorg() { curl "dict.org/d:$1"; }
 cheat() { curl "cheat.sh/$1"; }
