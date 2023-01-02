@@ -21,8 +21,8 @@ bind('n', '<Leader>f', '<cmd>vim.lsp.buf.formatting()<cr>', opts)
 bind('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
 bind('n', '<Leader>q', '<cmd>lua require "utils".smart_quit()<cr>', opts)
-bind('n', '<Leader>t', '<cmd>lua require "utils".send_to_tmux()<cr>', opts)
-bind('v', '<Leader>t', '<cmd>lua require "utils".send_to_tmux()<cr>', opts)
+bind('n', '<Leader>t', '<cmd>lua require "utils".send_to_tmux(".2")<cr>', {})
+bind('v', '<Leader>t', '<cmd>lua require "utils".send_to_tmux(".2")<cr>', {})
 
 if pcall(require, 'telescope') then
   bind('n', '<F1>', '<cmd>Telescope commands<cr>', opts)
