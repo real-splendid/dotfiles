@@ -21,8 +21,12 @@ function M.smart_quit()
 end
 
 --[[
-123
-456
+$test3 = "test 3";
+echo "test 1";
+echo 'test 2';
+echo $test3;
+"123"
+'456'
 789
 000
 ]]
@@ -33,10 +37,12 @@ function M.send_to_tmux(target)
 
   local function send_lines(lines)
     for _, line in ipairs(lines) do
+      local escaped = string.gsub(line, ";", "\\%1")
+      escaped = string.gsub(escaped, "'", "'\\''")
       os.execute(string.format(
         "tmux send-keys -t %s '%s' C-m",
         target,
-        line
+        escaped
       ))
     end
   end
