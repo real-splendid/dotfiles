@@ -7,6 +7,7 @@ theme = "everforest_dark"
 [editor]
 true-color = true
 color-modes = true
+cursorline = true
 line-number = "relative"
 
 [editor.whitespace.render]
@@ -15,22 +16,57 @@ tab = "all"
 [editor.cursor-shape]
 insert = "bar"
 
-# At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
 [keys.normal]
-"р" = "move_char_left"
-"о" = "move_line_down"
-"л" = "move_line_up"
-"д" = "move_char_right"
+# "р" = "move_char_left"
+# "о" = "move_line_down"
+# "л" = "move_line_up"
+# "д" = "move_char_right"
+# esc = ["collapse_selection", "normal_mode"]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+A-u = "switch_to_uppercase"
+A-l = "switch_to_lowercase"
 F5 = [":w", ":sh tmux send-keys -t .2 Up Enter"]
 F12 = ":config-open"
+A-F12 = ":open ~/.config/helix/languages.toml"
 
 [keys.normal.space]
-"space" = "command_palette"
+# b = "no_op"
+F = "no_op"
+F = "no_op"
+"?" = "no_op"
 c = "toggle_comments"
-q = ":q"
-w = ":w"
-r = ":sh php7.4 fizz.php"
+"space" = "command_palette"
+w = ":write"
+q = ":quit"
+Q = ":quit!"
 
-[keys.insert.j]
-j = "normal_mode"
-# j = ":insert-output printf 'j'"
+[keys.normal.space.f]
+n = ":new"           
+r = ":reload"           
+q = ":bclose"        
+f = "file_picker"
+d = "file_picker_in_current_directory"
+b = "buffer_picker"
+s = [
+  "commit_undo_checkpoint",
+  "select_all",
+  ":pipe tee /tmp/cspell.tmp",
+  "undo",
+  ":sh cat /tmp/cspell.tmp | docker run -i ghcr.io/streetsidesoftware/cspell:latest stdin --no-summary --no-progress || true",
+  "collapse_selection",
+]
+
+[keys.normal.m]  
+n = ["search_selection", "extend_search_next"]
+p = ["search_selection", "extend_search_prev"]
+                     
+# [keys.normal.space.c]
+# c = ":config-open"   
+# l = ":open ~/.config/helix/languages.toml"   
+# r = ":config-reload" 
+
+# [keys.normal.space.z]
+# w = ":set soft-wrap.enable true"   
+
+[keys.insert]      
+A-j = "normal_mode"
