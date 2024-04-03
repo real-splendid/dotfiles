@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+# SELECTED="$(cat ~/.config/fzf-menu.conf | column -s ',' -t | fzf --prompt="fzf-menu: " --layout=reverse --tiebreak=index)"
+# SELECTED_ID="$(echo "${SELECTED}" | grep -Po '^\S+')"
+# SELECTED_CMD="$(echo "${SELECTED}" | grep -Po '(?<=---).*')"
+# echo "${SELECTED_ID}" "\n" "${SELECTED_CMD}" "\n"
+# eval "${SELECTED_CMD}" || sleep 3
+
+SELECTED="$(cat ~/.config/fzf-menu.conf | grep -Po "^[^,]+" | fzf --prompt="fzf-menu: " --layout=reverse --tiebreak=index)"
+SELECTED_CMD="$(grep -F "${SELECTED}" ~/.config/fzf-menu.conf | grep -Po '(?<=---).*')"
+echo "${SELECTED_CMD}" "\n"
+eval "${SELECTED_CMD}" || sleep 3
+
+

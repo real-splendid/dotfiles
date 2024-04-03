@@ -13,8 +13,3 @@
     <!-- * comments -->
     <!-- * php formatter -->
     <!-- * find-replace -->
-* php
-    * php-cs-fixer
-    * rector
-    * phpmd
-    * phpcpd

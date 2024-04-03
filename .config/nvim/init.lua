@@ -1,7 +1,0 @@
-require('config')
-require('utils')
-require('keybindings')
-require('packages')
--- require('packages.iron-repl')
--- require('packages.completion')
--- require('null-ls')

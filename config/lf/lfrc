@@ -25,9 +25,14 @@ cmd mkfile ${{
   $EDITOR $ans
 }}
 
+cmd bat ${{ 
+    bat --paging=always "$f"
+}}
+
 # Keys
 # map e $$EDITOR "$f"
-map <enter> open
+# map <enter> open
+map <enter> bat "$f"
 map <insert> mkfile
 map <delete> delete
 map gm push '
